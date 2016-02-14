@@ -21,37 +21,67 @@
 	margin: 2%;
 }
 
-.turn-icon:hover ~ #shirt-turn {
-	transform: rotateY(180deg);
+.display-box{
+	position:relative;
 }
+
 
 .turn-icon {
 	border: 2px solid rgba(129, 188, 290, 1);
-	margin-left: 85%;
-}
-
-#shirt-turn{
-	height: 186px;
-	position: relative;
-}
-
-img {
 	position: absolute;
-	width: 100%;
-	top:50%;
-	transform:translateY(-50%);
-	backface-visibility: hidden;
+	top: 0%;
+	right:0%;
+	z-index: 5;
 }
 
-#front{
-	transform:rotateY(180deg);
+.turn-icon:hover{
+	background: rgba(129, 188, 290, 1);
 }
 
-.prod-box img {
-	display: block;
-	width: 100%;
-	padding: 10px;
+
+
+
+
+
+
+.shirtbox{
+	height: 186px;
+	position: relative;	
+	transition: all .2s;
+
 }
+
+	.prod-box img {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		position: absolute;
+		transition: all .2s;
+		backface-visibility: hidden;
+
+	}
+
+	.front{
+		z-index: 2;
+		transform: rotateY(0deg);
+
+	}
+
+		.turn-icon:hover ~ .shirtbox .front{
+			transform: rotateY(-180deg);
+		}
+
+	.back{
+		z-index: 3;
+		transform: rotateY(180deg);
+	}
+
+		.turn-icon:hover ~ .shirtbox .back{
+			transform: rotateY(0deg);
+		}
+
+
+
 
 .button-container{
 	border: 1px solid rgba(129, 188, 290, 1);
